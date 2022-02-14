@@ -13,37 +13,26 @@ import numpy as np
 import pandas as pd
 from torch.autograd import Variable
 
-'''
-if torch.cuda.is_available():
-   DEVICE = torch.device("cuda")
-else:
-   DEVICE = torch.device("cpu")
 
-print(DEVICE)
-'''
+#if torch.cuda.is_available():
+   #DEVICE = torch.device("cuda")
+#else:
+   #DEVICE = torch.device("cpu")
+
+#print(DEVICE)
+
 
 torch.manual_seed(1)
 
 # MNIST dataset 
 train_dataset = torchvision.datasets.MNIST(root='./data', 
                                            train=True, 
-                                           transform=transforms.Compose([
-                                                transforms.Resize((32,32)),
-                                                transforms.ToTensor(),
-                                                transforms.Normalize((0.1307,), (0.3081,))
-                                                ]),  
-                                           download=True,
-                                          )
-
+                                           transform=transforms.ToTensor(),  
+                                           download=True)
 
 test_dataset = torchvision.datasets.MNIST(root='./data', 
                                           train=False, 
-                                          transform=transforms.Compose([
-                                                transforms.Resize((32, 32)),
-                                                transforms.ToTensor(),
-                                                transforms.Normalize((0.1307,), (0.3081,))
-                                                ])
-                                         )
+                                          transform=transforms.ToTensor())
 
 print("train_dataset size:", len(train_dataset),"\ntest_dataset size:", len(test_dataset))
 
@@ -55,7 +44,7 @@ train_dataset.targets = randomLabel
 
 # Data loader
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, 
-                                           batch_size=100, 
+                                           batch_size=600, 
                                            shuffle=True)
 
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset, 
@@ -77,21 +66,16 @@ class RMNIST(nn.Module):
     def __init__(self):
         super(RMNIST, self).__init__()
         
-        self.conv1 = nn.Conv2d(1, 3, 5)
-        self.conv2 = nn.Conv2d(3, 13, 5)        
-        self.fc1 = nn.Linear(13 * 5 * 5, 120)
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 10)
+        self.fc1 = nn.Linear(784, 96)
+        self.dropout = nn.Dropout(0.3195759100801704) 
+        self.fc2 = nn.Linear(96, 10)
 
     def forward(self, x):
-        x = F.max_pool2d(F.relu(self.conv1(x)), 2)
-        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
-        # flatten as one dimension
-        x = x.view(x.size()[0], -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
 
-        x = self.fc3(x)
+        x = F.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = self.fc2(x)
+
         return x
 
 def train(model, optimizer, epoch, train_loader, interval):
@@ -153,7 +137,7 @@ def test(model, epoch, test_loader):
 
 rmnist = RMNIST()
 loss_func = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(rmnist.parameters(), lr=0.0001)
+optimizer = torch.optim.Adam(rmnist.parameters(), lr=6.729740042035753e-05)
 
 a=[]
 for i in rmnist.parameters():
@@ -165,7 +149,7 @@ train_loss_arr = []
 test_loss_arr = []
 
 epochArr = []
-epochs = 2
+epochs = 5
 interval = 500
 for epoch in range(1, epochs + 1):
     epochArr.append(epoch)
@@ -185,8 +169,8 @@ plt.ylabel("Loss")
 plt.title("random labels train vs test loss",color = "green")
 
 
-plt.savefig('C:/Users/Dinesh/Desktop/randomMnist.png',
+'''plt.savefig('/home/dravich/Research/Plots/randomMnist.png',
             format='PNG',
             dpi=300,
-            bbox_inches='tight')
+            bbox_inches='tight')'''
 plt.show()

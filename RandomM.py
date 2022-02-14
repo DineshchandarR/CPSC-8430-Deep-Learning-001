@@ -13,14 +13,14 @@ import numpy as np
 import pandas as pd
 from torch.autograd import Variable
 
-'''
-if torch.cuda.is_available():
-   DEVICE = torch.device("cuda")
-else:
-   DEVICE = torch.device("cpu")
 
-print(DEVICE)
-'''
+#if torch.cuda.is_available():
+   #DEVICE = torch.device("cuda")
+#else:
+   #DEVICE = torch.device("cpu")
+
+#print(DEVICE)
+
 
 torch.manual_seed(1)
 
@@ -165,7 +165,7 @@ train_loss_arr = []
 test_loss_arr = []
 
 epochArr = []
-epochs = 2
+epochs = 1000
 interval = 500
 for epoch in range(1, epochs + 1):
     epochArr.append(epoch)
@@ -185,7 +185,7 @@ plt.ylabel("Loss")
 plt.title("random labels train vs test loss",color = "green")
 
 
-plt.savefig('C:/Users/Dinesh/Desktop/randomMnist.png',
+plt.savefig('/home/dravich/Research/Plots/randomMnist.png',
             format='PNG',
             dpi=300,
             bbox_inches='tight')
