@@ -28,9 +28,9 @@ torch.manual_seed(1)
 train_dataset = torchvision.datasets.MNIST(root='./data', 
                                            train=True, 
                                            transform=transforms.Compose([
-                                                transforms.Resize((32,32)),
+                                           
                                                 transforms.ToTensor(),
-                                                transforms.Normalize((0.1307,), (0.3081,))
+                                               
                                                 ]),  
                                            download=True,
                                           )
@@ -39,9 +39,9 @@ train_dataset = torchvision.datasets.MNIST(root='./data',
 test_dataset = torchvision.datasets.MNIST(root='./data', 
                                           train=False, 
                                           transform=transforms.Compose([
-                                                transforms.Resize((32, 32)),
+                                                
                                                 transforms.ToTensor(),
-                                                transforms.Normalize((0.1307,), (0.3081,))
+                                          
                                                 ])
                                          )
 
@@ -77,21 +77,16 @@ class RMNIST(nn.Module):
     def __init__(self):
         super(RMNIST, self).__init__()
         
-        self.conv1 = nn.Conv2d(1, 3, 5)
-        self.conv2 = nn.Conv2d(3, 13, 5)        
-        self.fc1 = nn.Linear(13 * 5 * 5, 120)
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 10)
+        self.fc1 = nn.Linear(784, 500)
+        self.fc2 = nn.Linear(500, 10)
+        
 
     def forward(self, x):
-        x = F.max_pool2d(F.relu(self.conv1(x)), 2)
-        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
+
         # flatten as one dimension
         x = x.view(x.size()[0], -1)
         x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-
-        x = self.fc3(x)
+        x = self.fc2(x)
         return x
 
 def train(model, optimizer, epoch, train_loader, interval):
@@ -99,6 +94,7 @@ def train(model, optimizer, epoch, train_loader, interval):
     loss_fn = torch.nn.CrossEntropyLoss()
     n_correct = 0
     n_samples = 0
+    
 
     for i, (data, target) in enumerate(train_loader):
         
@@ -110,8 +106,11 @@ def train(model, optimizer, epoch, train_loader, interval):
         # Forward propagation
         prediction = model(data)
         loss = loss_fn(prediction, target)
+        #lossSum += loss.detach().numpy()
+        
+        #Backward prop
         loss.backward()
-
+        
         optimizer.step()
 
         _, predicted = torch.max(prediction.data, 1)
@@ -185,7 +184,7 @@ plt.ylabel("Loss")
 plt.title("random labels train vs test loss",color = "green")
 
 
-plt.savefig('/home/dravich/Research/Plots/randomMnist.png',
+plt.savefig('/home/dravich/Research/Plots/randomMnist2.png',
             format='PNG',
             dpi=300,
             bbox_inches='tight')
