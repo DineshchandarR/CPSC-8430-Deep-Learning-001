@@ -43,6 +43,9 @@ REPORT: Reports folder contains the report for this assignment in PDF. format, l
     # Performing PCA for dimensional reduction.
     # Visualization of optimization.
     
+2.3. What Happened When Gradient is Almost Zero!, link: https://github.com/DineshchandarR/CPSC-8430-Deep-Learning-001/blob/main/HW1/HW1.2_GradZero_v2.ipynb
+Finding grad zero ratio using hessian matrix.
+    
 3. Generalization (Using MNIST)
 3.1. Can network fit random labels?, link: https://github.com/DineshchandarR/CPSC-8430-Deep-Learning-001/blob/main/RandomM.py
 > Concepts covered:
