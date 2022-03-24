@@ -1,0 +1,132 @@
+Decision Tree
+Fitting 15 folds for each of 50 candidates, totalling 750 fits
+Best Params
+{'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5}
+Best Estimator
+DecisionTreeClassifier(max_depth=20, min_samples_leaf=5, random_state=42)
+confusion Matrix
+[[24285   220]
+ [  276  1139]]
+Accuracy once
+0.9808641975308642
+classification report
+{'0': {'precision': 0.9887626725296201, 'recall': 0.9910222403591104, 'f1-score': 0.9898911669995516, 'support': 24505}, '1': {'precision': 0.8381162619573216, 'recall': 0.8049469964664311, 'f1-score': 0.8211968276856524, 'support': 1415}, 'accuracy': 0.9808641975308642, 'macro avg': {'precision': 0.9134394672434709, 'recall': 0.8979846184127707, 'f1-score': 0.905543997342602, 'support': 25920}, 'weighted avg': {'precision': 0.9805387268907387, 'recall': 0.9808641975308642, 'f1-score': 0.9806819659914818, 'support': 25920}}
+ROC_AUC_Score
+0.8979846184127708
+-------------------------------------------------------------------------
+[[24285   220]
+ [  276  1139]] 0.9808641975308642 0.8979846184127708
+{'0': {'precision': 0.9887626725296201, 'recall': 0.9910222403591104, 'f1-score': 0.9898911669995516, 'support': 24505}, '1': {'precision': 0.8381162619573216, 'recall': 0.8049469964664311, 'f1-score': 0.8211968276856524, 'support': 1415}, 'accuracy': 0.9808641975308642, 'macro avg': {'precision': 0.9134394672434709, 'recall': 0.8979846184127707, 'f1-score': 0.905543997342602, 'support': 25920}, 'weighted avg': {'precision': 0.9805387268907387, 'recall': 0.9808641975308642, 'f1-score': 0.9806819659914818, 'support': 25920}}
+-------------------------------------------------------------------------
+Bernoulli Naive Bayes
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+Best Params
+{'alpha': 0.01}
+Best Estimator
+BernoulliNB(alpha=0.01)
+confusion Matrix
+[[24505     0]
+ [ 1415     0]]
+Accuracy once
+0.9454089506172839
+classification report
+{'0': {'precision': 0.9454089506172839, 'recall': 1.0, 'f1-score': 0.9719385225582547, 'support': 24505}, '1': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 1415}, 'accuracy': 0.9454089506172839, 'macro avg': {'precision': 0.47270447530864196, 'recall': 0.5, 'f1-score': 0.4859692612791274, 'support': 25920}, 'weighted avg': {'precision': 0.893798083907274, 'recall': 0.9454089506172839, 'f1-score': 0.918879378676313, 'support': 25920}}
+ROC_AUC_Score
+0.5
+-------------------------------------------------------------------------
+[[24505     0]
+ [ 1415     0]] 0.9454089506172839 0.5
+{'0': {'precision': 0.9454089506172839, 'recall': 1.0, 'f1-score': 0.9719385225582547, 'support': 24505}, '1': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 1415}, 'accuracy': 0.9454089506172839, 'macro avg': {'precision': 0.47270447530864196, 'recall': 0.5, 'f1-score': 0.4859692612791274, 'support': 25920}, 'weighted avg': {'precision': 0.893798083907274, 'recall': 0.9454089506172839, 'f1-score': 0.918879378676313, 'support': 25920}}
+-------------------------------------------------------------------------
+Complement Naive Bayes
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+Best Params
+{'alpha': 10.0}
+Best Estimator
+ComplementNB(alpha=10.0)
+confusion Matrix
+[[16452  8053]
+ [  779   636]]
+Accuracy once
+0.6592592592592592
+classification report
+{'0': {'precision': 0.9547907840519994, 'recall': 0.6713731891450724, 'f1-score': 0.7883841288096606, 'support': 24505}, '1': {'precision': 0.07319599493612614, 'recall': 0.44946996466431094, 'f1-score': 0.12589073634204276, 'support': 1415}, 'accuracy': 0.6592592592592592, 'macro avg': {'precision': 0.5139933894940627, 'recall': 0.5604215769046916, 'f1-score': 0.45713743257585165, 'support': 25920}, 'weighted avg': {'precision': 0.9066635993838296, 'recall': 0.6592592592592592, 'f1-score': 0.7522179193057378, 'support': 25920}}
+ROC_AUC_Score
+0.5604215769046917
+-------------------------------------------------------------------------
+[[16452  8053]
+ [  779   636]] 0.6592592592592592 0.5604215769046917
+{'0': {'precision': 0.9547907840519994, 'recall': 0.6713731891450724, 'f1-score': 0.7883841288096606, 'support': 24505}, '1': {'precision': 0.07319599493612614, 'recall': 0.44946996466431094, 'f1-score': 0.12589073634204276, 'support': 1415}, 'accuracy': 0.6592592592592592, 'macro avg': {'precision': 0.5139933894940627, 'recall': 0.5604215769046916, 'f1-score': 0.45713743257585165, 'support': 25920}, 'weighted avg': {'precision': 0.9066635993838296, 'recall': 0.6592592592592592, 'f1-score': 0.7522179193057378, 'support': 25920}}
+-------------------------------------------------------------------------
+Gaussian Naive Bayes
+Fitting 5 folds for each of 100 candidates, totalling 500 fits
+Best Params
+{'var_smoothing': 1.0}
+Best Estimator
+GaussianNB(var_smoothing=1.0)
+confusion Matrix
+[[24505     0]
+ [ 1415     0]]
+Accuracy once
+0.9454089506172839
+classification report
+{'0': {'precision': 0.9454089506172839, 'recall': 1.0, 'f1-score': 0.9719385225582547, 'support': 24505}, '1': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 1415}, 'accuracy': 0.9454089506172839, 'macro avg': {'precision': 0.47270447530864196, 'recall': 0.5, 'f1-score': 0.4859692612791274, 'support': 25920}, 'weighted avg': {'precision': 0.893798083907274, 'recall': 0.9454089506172839, 'f1-score': 0.918879378676313, 'support': 25920}}
+ROC_AUC_Score
+0.5
+-------------------------------------------------------------------------
+[[24505     0]
+ [ 1415     0]] 0.9454089506172839 0.5
+{'0': {'precision': 0.9454089506172839, 'recall': 1.0, 'f1-score': 0.9719385225582547, 'support': 24505}, '1': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 1415}, 'accuracy': 0.9454089506172839, 'macro avg': {'precision': 0.47270447530864196, 'recall': 0.5, 'f1-score': 0.4859692612791274, 'support': 25920}, 'weighted avg': {'precision': 0.893798083907274, 'recall': 0.9454089506172839, 'f1-score': 0.918879378676313, 'support': 25920}}
+-------------------------------------------------------------------------
+KNN
+Fitting 5 folds for each of 2842 candidates, totalling 14210 fits
+Best Params
+{'leaf_size': 1, 'n_neighbors': 3, 'p': 1}
+Best Estimator
+KNeighborsClassifier(leaf_size=1, n_neighbors=3, p=1)
+confusion Matrix
+[[24315   190]
+ [  211  1204]]
+Accuracy once
+0.9845293209876543
+classification report
+{'0': {'precision': 0.9913968849384327, 'recall': 0.9922464803101407, 'f1-score': 0.9918215006832412, 'support': 24505}, '1': {'precision': 0.8637015781922525, 'recall': 0.8508833922261484, 'f1-score': 0.8572445710217159, 'support': 1415}, 'accuracy': 0.9845293209876543, 'macro avg': {'precision': 0.9275492315653426, 'recall': 0.9215649362681446, 'f1-score': 0.9245330358524786, 'support': 25920}, 'weighted avg': {'precision': 0.9844258641419109, 'recall': 0.9845293209876543, 'f1-score': 0.9844748048703145, 'support': 25920}}
+ROC_AUC_Score
+0.9215649362681446
+-------------------------------------------------------------------------
+[[24315   190]
+ [  211  1204]] 0.9845293209876543 0.9215649362681446
+{'0': {'precision': 0.9913968849384327, 'recall': 0.9922464803101407, 'f1-score': 0.9918215006832412, 'support': 24505}, '1': {'precision': 0.8637015781922525, 'recall': 0.8508833922261484, 'f1-score': 0.8572445710217159, 'support': 1415}, 'accuracy': 0.9845293209876543, 'macro avg': {'precision': 0.9275492315653426, 'recall': 0.9215649362681446, 'f1-score': 0.9245330358524786, 'support': 25920}, 'weighted avg': {'precision': 0.9844258641419109, 'recall': 0.9845293209876543, 'f1-score': 0.9844748048703145, 'support': 25920}}
+-------------------------------------------------------------------------
+Logistic Regression
+Fitting 5 folds for each of 108 candidates, totalling 540 fits
+Best Params
+{'C': 0.001, 'penalty': 'l2', 'solver': 'newton-cg'}
+Best Estimator
+LogisticRegression(C=0.001, random_state=0, solver='newton-cg')
+Fitting 5 folds for each of 108 candidates, totalling 540 fits
+Best Params
+{'C': 0.001, 'penalty': 'l2', 'solver': 'newton-cg'}
+Best Estimator
+LogisticRegression(C=0.001, random_state=0, solver='newton-cg')
+Fitting 5 folds for each of 108 candidates, totalling 540 fits
+Best Params
+{'C': 0.001, 'penalty': 'l2', 'solver': 'newton-cg'}
+Best Estimator
+LogisticRegression(C=0.001, random_state=0, solver='newton-cg')
+ 
+ 
++------------------------------------------+ 
+| PALMETTO CLUSTER PBS RESOURCES REQUESTED | 
++------------------------------------------+ 
+ 
+mem=5gb,walltime=30:00:00,ncpus=16
+ 
+ 
++-------------------------------------+ 
+| PALMETTO CLUSTER PBS RESOURCES USED | 
++-------------------------------------+ 
+ 
+cput=118:32:23,mem=5242880kb,walltime=07:27:35,ncpus=16,cpupercent=1588,vmem=17030408kb
+ 
+ 
