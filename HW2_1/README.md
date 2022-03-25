@@ -24,14 +24,16 @@ Best bleu score is 0.709, for the testdata present in "/testing_data"
 System Requirment:
 ---------------
 The code was trained on Palmetto system with the following configuration:
-CPU: 20
-Mem: 125
-GPU: 1
-GPU model: Any
-Execution Time: 12371.845 seconds
+*CPU: 20
+*Mem: 125
+*GPU: 1
+*GPU model: Any
+*Execution Time: 12371.845 seconds
 
 Report: 
 ---------------
+https://github.com/DineshchandarR/CPSC-8430-Deep-Learning-001/blob/main/HW2_1/Ravichandran_Dineshchandar_HW2.pdf
+
 
 Incase of any issues/quereis kindly contact me at dravich@g.clemson.edu
 
