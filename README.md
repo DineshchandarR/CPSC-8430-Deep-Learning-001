@@ -72,9 +72,9 @@ All the assignments task are performed on juyper notbooks and saved in .ipynb fi
 
 
 ## Homework 2| Video Caption Generation using S2VT :
-Created a Sequence to Sequence - Video to Text using GRU, train the model using the provided video files and the caption files. Test the model and evalute performance using BLEU evalution. Current model BLEU score=  0.709.
+Created a Sequence to Sequence - Video to Text using GRU, train the model using the provided video files and the caption files. Test the model and evaluate performance using BLEU evaluation. Current model BLEU score= 0.709.
 
-## Homework 3|  Implementaion of Generative Adversarial Network’s :
+## Homework 3|  Implementation of Generative Adversarial Networks :
 To train a discriminator/generator pair on the CIFAR10 dataset utilizing techniques from DCGAN, Wasserstein GANs, and ACGAN. Post which to evaluate and compare the performance between the DCGAN, WGAN, WGAN-GP  & ACGAN for 50 Epoch using FID score, as illustrated below:
 
 ![image](https://user-images.githubusercontent.com/96357078/164615269-6e169c7d-7858-4359-b409-d28cf1c216c4.png)
